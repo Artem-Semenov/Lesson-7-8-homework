@@ -45,7 +45,7 @@ header > img {
 }
 header > nav > ul {
 display: flex;
-
+font-family: 'Roboto';
 }
 header > nav > ul > li >a{
 padding: 0 50px;
@@ -60,7 +60,30 @@ justify-content: center;
 align-items: center;
 }
 .li-modal {
-  background: url(img/Прямоугольник_4_копия.png) 130px 23px no-repeat;
+  background: url(img/Прямоугольник_4_копия.png) 140px 23px no-repeat;
+  position: relative;
+}
+.li-modal:hover .modal-window {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-window {
+  position: absolute;
+  right: 0;
+  width: 180px;
+  height: 195px;
+  border-radius: 10px;
+  padding: 10px;
+background: rgb(253, 207, 207);
+transition: all ease 0.5s;
+opacity: 0;
+visibility: hidden;
+text-align: center;
+}
+.modal-window > ul > li > a {
+font-size: 18px;
+line-height: 35px;
+color:#215991;
 }
 .li-search {
   width: 200px;
@@ -186,20 +209,35 @@ margin-bottom: 10px;
 .display-none {
   display: none;
 }
+.tablet-display {
+  display: none;
+}
 @media (max-width: 1210px) {
   header > nav > ul > li >a {
     padding: 0 20px;
   }
+  .li-modal {
+    background-position-x: 110px;
+  }
+  .modal-window {
+    width: 125px;
+  }
+  .modal-window  > ul > li > a {
+    font-size: 15px;
+  }
 }
 @media(max-width: 1028px) {
-  .display-none {
+   .tablet-display{
     display: block;
   }
-  .mobile-display-none {
+  .tablet-display-none {
     display: none;
   }
 }
 @media(max-width: 770px) {
+  header {
+    justify-content: center;
+  }
   .display-none {
     display: block;
   }
